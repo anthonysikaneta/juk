@@ -7,7 +7,7 @@
 		maxResults: '20',
 		part: 'id,snippet',
 		fields: 'items/id,items/snippet/title,items/snippet/description,items/snippet/thumbnails/default,items/snippet/channelTitle',
-		q: query
+		q: 'query'
 	};
 
 	angular
@@ -26,7 +26,7 @@
 		}
 
 		return {
-			search: Search;
+			search: Search
 		};
 	}
 })();

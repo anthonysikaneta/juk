@@ -7,8 +7,8 @@
 	};
 
 	angular
-	.module('juk.account', [])
-	.controller('RegisterCtrl', RegisterCtrl);
+		.module('juk.account', [])
+		.controller('RegisterCtrl', RegisterCtrl);
 
 	function RegisterCtrl ($scope, $http, $window, $location) {
 		$scope.collection = [];

@@ -3,9 +3,8 @@
 	'use strict';
 
 	/**
-	* app Module
-	*
 	* Description
+	* Local storage helper service
 	*/
 	angular
 		.module('app')
@@ -79,10 +78,10 @@
 			}
 		};
 
-		var bindEventsToInputs = function () {
+		var bindEventsToInputs = function (inputId, outputId) {
 			//example
-			var dataInput = document.getElementById('data'),
-			output = document.getElementById('fromEvent');
+			var dataInput = document.getElementById(inputId),
+				output = document.getElementById(outputId);
 
 			addEvent(window, 'storage', function (event) {
 				if (event.key == 'storage-event-test') {
@@ -111,4 +110,4 @@
 			return false;
 		};
 	}
-})(); 
+})();

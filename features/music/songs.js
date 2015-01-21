@@ -64,10 +64,10 @@
 
 		function getSong () {
 			return JukExtra.get($routeParams.id)
-			.then(function (data) {
-				$scope.song = data.data;
-				return $scope.selectedItem;
-			});
+				.then(function (data) {
+					$scope.song = data.data;
+					return $scope.selectedItem;
+				});
 		}
 
 		function isActive (item) {
