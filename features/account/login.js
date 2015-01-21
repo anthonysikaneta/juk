@@ -1,10 +1,10 @@
 (function () {
 	'use strict';
-    
-    var options = {
-        'method': 'POST',
-        'queryparams': ''
-    };
+	
+	var options = {
+		'method': 'POST',
+		'queryparams': ''
+	};
 
 	angular
 		.module('juk.account', [])
@@ -18,26 +18,26 @@
 		$scope.selectedItem = undefined;
 		$scope.title = 'LoginCtrl';
 
-	    $scope.reset = function(form) {
-	        if (form) {
-	            form.$setPristine();
-	            form.$setUntouched();
-	        }
-	        $scope.user = angular.copy($scope.master);
-	    };
+		$scope.reset = function(form) {
+			if (form) {
+				form.$setPristine();
+				form.$setUntouched();
+			}
+			$scope.user = angular.copy($scope.master);
+		};
 
-	    $scope.reset();
+		$scope.reset();
 
-	    $scope.login = function (user) {
-	        user.grant_type = 'password';
-	        $scope.master = angular.copy(user);
+		$scope.login = function (user) {
+			user.grant_type = 'password';
+			$scope.master = angular.copy(user);
 
-	        options = angular.extend({
-	            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-	            'data': $.param(user),
-	            'url': 'http://localhost/Juk/services/api/account/token'
-	        }, options);
-	    };
+			options = angular.extend({
+				headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+				'data': $.param(user),
+				'url': 'http://localhost/Juk/services/api/account/token'
+			}, options);
+		};
 
 		activate();
 

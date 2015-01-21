@@ -1,40 +1,40 @@
 (function () {
-    'use strict';
-    
-    var options = {
-        'method': 'POST',
-        'queryparams': '',
-    };
+	'use strict';
 
-    angular
-        .module('juk.account', [])
-        .controller('RegisterCtrl', RegisterCtrl);
+	var options = {
+		'method': 'POST',
+		'queryparams': '',
+	};
 
-    function RegisterCtrl ($scope, $http, $window, $location) {
-        $scope.collection = [];
-        $scope.selectedItem = undefined;
-        $scope.title = 'RegisterCtrl';
-        
-        $scope.register = function (user) {
-            options = angular.extend({
-                'data': user,
-                'url': 'http://localhost/Juk/services/api/users/register'
-            }, options);
+	angular
+	.module('juk.account', [])
+	.controller('RegisterCtrl', RegisterCtrl);
 
-            return $http(options).error(function () {
-            }).then(function (response) {
-                $window.location.href = "/Juk/client";
-                return response;
-            });
-        };
+	function RegisterCtrl ($scope, $http, $window, $location) {
+		$scope.collection = [];
+		$scope.selectedItem = undefined;
+		$scope.title = 'RegisterCtrl';
 
-        $scope.user = {};
-        $scope.errors = {};
+		$scope.register = function (user) {
+			options = angular.extend({
+				'data': user,
+				'url': 'http://localhost/Juk/services/api/users/register'
+			}, options);
 
-        $scope.register = function(form) {
-          $scope.submitted = true;
-      
-          if(form.$valid) {
+			return $http(options).error(function () {
+			}).then(function (response) {
+				$window.location.href = "/Juk/client";
+				return response;
+			});
+		};
+
+		$scope.user = {};
+		$scope.errors = {};
+
+		$scope.register = function(form) {
+			$scope.submitted = true;
+
+			if(form.$valid) {
             // Auth.createUser({
             //   name: $scope.user.name,
             //   email: $scope.user.email,
@@ -54,7 +54,7 @@
             //     $scope.errors[field] = error.message;
             //   });
             // });
-          }
-        };
-    }
+			}
+		};
+	}
 })();

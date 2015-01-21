@@ -19,10 +19,10 @@
 			return $http.get('https://www.googleapis.com/youtube/v3/search', {
 				params: (options || defaults)
 			}, function (status) {
-	            console.log(status);
-	        }).then(function (response) {
-	            return response;
-	        });
+				console.log(status);
+			}).then(function (response) {
+				return response;
+			});
 		}
 
 		return {

@@ -1,7 +1,7 @@
 (function () {
-    'use strict';
+	'use strict';
 
-    angular
+	angular
 		.module('juk.music', [])
 		.controller('SongsCtrl', SongsCtrl)
 		.controller('SongDetailCtrl', SongDetailCtrl);
@@ -15,12 +15,12 @@
 
 					$scope.videoId = data.youtube.id;
 
-		    		PartyService.getPublicParties().then(function (parties) {
+					PartyService.getPublicParties().then(function (parties) {
 						$scope.myForm = {};
 						$scope.myForm.parties = parties.data;
-		    			PartyService.getPrivateParties().then(function (parties) {
-		    				angular.extend($scope.myForm.parties, parties.data);
-		    			});
+						PartyService.getPrivateParties().then(function (parties) {
+							angular.extend($scope.myForm.parties, parties.data);
+						});
 					});
 
 					$scope.addSong = function () {
@@ -64,10 +64,10 @@
 
 		function getSong () {
 			return JukExtra.get($routeParams.id)
-				.then(function (data) {
-					$scope.song = data.data;
-					return $scope.selectedItem;
-				});
+			.then(function (data) {
+				$scope.song = data.data;
+				return $scope.selectedItem;
+			});
 		}
 
 		function isActive (item) {
