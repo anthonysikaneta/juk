@@ -2,9 +2,10 @@
 	'use strict';
 
 	angular
-		.module('juk'[
+		.module('juk', [
 			'ui.bootstrap',
 			// 'juk.controllers',
+            'LocalStorageModule',
 			'juk.account', 'juk.friends', 'juk.menu', 'juk.music', 'juk.musicsearch', 'juk.parties',
 			'juk.directives',
 			'juk.services'

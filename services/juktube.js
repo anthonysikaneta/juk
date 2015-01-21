@@ -1,11 +1,11 @@
 (function () {
 	'use strict';
 
-	YT = YT || {};
+	var YT = YT || {};
 
 	angular
-		.module('juk.juktube')
-		.run(initialize),
+		.module('juk.juktube', [])
+		.run(initialize)
 		.controller('JukTubeCtrl', JukTubeCtrl)
 		.service('VideosService', VideosService);
 
@@ -77,7 +77,7 @@
 		};
 	}
 
-	function VideosService () {
+	function VideosService ($window, $rootScope, $log, localStorageService) {
 		var service = this;
 
 		var youtube = {
@@ -249,4 +249,4 @@
 			return history;
 		};
 	}
-})(YT);
+})();

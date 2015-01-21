@@ -7,7 +7,7 @@
 	* Local storage helper service
 	*/
 	angular
-		.module('app')
+		.module('LocalStorageModule', [])
 		.factory('localStorageService', LocalStorageService);
 
 	function LocalStorageService () {
@@ -31,7 +31,7 @@
 
 		var setItem = function (key, value) {
 			// Store
-			localStorage.setItem(key, value) || localStorage[key] = value;
+			localStorage.setItem(key, value);
 		};
 
 		var removeItem = function (key) {
@@ -102,9 +102,11 @@
 		if (isSupported) {
 			bindEvents();
 			return {
-				retrieve: getItem,
-				store: setItem,
-				reset: clearAll
+				get: getItem,
+				getObject: retrieveObject,
+				reset: clearAll,
+				set: setItem,
+				setObject: storeObject,
 			};
 		} else {
 			return false;

@@ -5,7 +5,7 @@
 		.module('juk.services')
 		.factory('PartyService', PartyService);
 
-	function ($resource, $q, $http, $rootScope) {
+	function PartyService ($resource, $q, $http, $rootScope) {
 
 		function PartyGet(config) {
 			options = angular.extend({
@@ -62,4 +62,5 @@
 				return Party('/api/parties/public');
 			}
 		};
+	}
 })();
